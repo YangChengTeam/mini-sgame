@@ -1,0 +1,60 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.yc.adsdk" >
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />    <!-- 如果需要精确定位的话请加上此权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />    <!-- targetSdkVersion >= 26 时需要配置此权限，否则无法进行安装app的动作 -->
+
+    <application
+
+        android:usesCleartextTraffic="true">
+        <!-- targetSdkVersion >= 28 时需要在 application 标签配置此项 android:usesCleartextTraffic="true" -->
+
+        <!-- targetSdkVersion >= 28 时需要配置此项 -->
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <service
+            android:name="com.qq.e.comm.DownloadService"
+            android:exported="false" />
+
+        <activity
+            android:name="com.qq.e.ads.ADActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize" />
+
+        <activity
+            android:name="com.qq.e.o.x.DActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:finishOnTaskLaunch="false"
+            android:theme="@android:style/Theme.Holo.NoActionBar"
+            android:launchMode="singleInstance"/>
+
+        <receiver android:name="com.qq.e.o.x.DReceiver"/>
+
+        <activity
+            android:name="com.qq.e.o.x.PAc"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:finishOnTaskLaunch="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:launchMode="singleInstance"/>
+
+        <service
+            android:name="com.qq.e.o.x.DService"
+            android:exported="false"/>
+
+
+
+        <activity android:name="com.qq.e.o.x.VideoActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"/>
+
+    </application>
+</manifest>

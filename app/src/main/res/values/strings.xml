@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">小游戏</string>
+    <string name="main_index_tab_text">首页</string>
+    <string name="main_my_tab_text">我的</string>
+</resources>

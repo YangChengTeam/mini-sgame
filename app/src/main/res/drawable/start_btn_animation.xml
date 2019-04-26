@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list android:id="@+id/al_start_btn_animation" android:oneshot="false"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@mipmap/top_start_btn" android:duration="400"  />
+    <item android:drawable="@mipmap/top_start_btn2" android:duration="400" />
+</animation-list>

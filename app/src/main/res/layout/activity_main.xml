@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <FrameLayout
+        android:id="@+id/fragment_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:background="@color/main_bg"
+        app:layout_constraintBottom_toTopOf="@id/v_divider"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <View
+        android:id="@+id/v_divider"
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dip"
+        android:background="@color/divider_color"
+        app:layout_constraintBottom_toTopOf="@id/cl_tab" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/cl_tab"
+        android:layout_width="0.0dip"
+        android:layout_height="48dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="@dimen/tab_margin"
+        android:layout_marginStart="@dimen/tab_margin"
+        android:layout_marginRight="@dimen/tab_margin"
+        android:layout_marginEnd="@dimen/tab_margin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_index_tab"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/cl_my_tab"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="2dp">
+
+            <ImageView
+                android:id="@+id/iv_index_tab"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:paddingBottom="1.0dip"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/index_tab_selected"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_index_tab_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="2.0dip"
+                android:paddingBottom="3.0dip"
+                android:text="@string/main_index_tab_text"
+                android:textColor="@color/tab_color_selected"
+                android:textSize="9dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_index_tab" />
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_my_tab"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@+id/cl_index_tab"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="2dp">
+
+            <ImageView
+                android:id="@+id/iv_my_tab"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:paddingBottom="1.0dip"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/my_tab"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_my_tab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="2.0dip"
+                android:paddingBottom="3.0dip"
+                android:text="@string/main_my_tab_text"
+                android:textColor="@color/tab_color"
+                android:textSize="9.0dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_my_tab" />
+        </android.support.constraint.ConstraintLayout>
+    </android.support.constraint.ConstraintLayout>
+</android.support.constraint.ConstraintLayout>
