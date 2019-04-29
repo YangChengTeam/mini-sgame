@@ -1,0 +1,99 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\Administrator\Desktop\sgame\tencent-adv\src\main\AndroidManifest.xml:1:1-46:12
+INJECTED from C:\Users\Administrator\Desktop\sgame\tencent-adv\src\main\AndroidManifest.xml:1:1-46:12
+INJECTED from C:\Users\Administrator\Desktop\sgame\tencent-adv\src\main\AndroidManifest.xml:1:1-46:12
+INJECTED from C:\Users\Administrator\Desktop\sgame\tencent-adv\src\main\AndroidManifest.xml:1:1-46:12
+INJECTED from C:\Users\Administrator\Desktop\sgame\tencent-adv\src\main\AndroidManifest.xml:1:1-46:12
+INJECTED from C:\Users\Administrator\Desktop\sgame\tencent-adv\src\main\AndroidManifest.xml:1:1-46:12
+INJECTED from C:\Users\Administrator\Desktop\sgame\tencent-adv\src\main\AndroidManifest.xml:1:1-46:12
+	package
+		ADDED from C:\Users\Administrator\Desktop\sgame\tencent-adv\src\main\AndroidManifest.xml:2:5-33
+		INJECTED from C:\Users\Administrator\Desktop\sgame\tencent-adv\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Administrator\Desktop\sgame\tencent-adv\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\Administrator\Desktop\sgame\tencent-adv\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Administrator\Desktop\sgame\tencent-adv\src\main\AndroidManifest.xml:1:1-46:12
+		INJECTED from C:\Users\Administrator\Desktop\sgame\tencent-adv\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from C:\Users\Administrator\Desktop\sgame\tencent-adv\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Administrator\Desktop\sgame\tencent-adv\src\main\AndroidManifest.xml:1:1-46:12
+		INJECTED from C:\Users\Administrator\Desktop\sgame\tencent-adv\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\Administrator\Desktop\sgame\tencent-adv\src\main\AndroidManifest.xml:1:11-69
+uses-permission#android.permission.INTERNET
+ADDED from C:\Users\Administrator\Desktop\sgame\tencent-adv\src\main\AndroidManifest.xml:4:5-67
+	android:name
+		ADDED from C:\Users\Administrator\Desktop\sgame\tencent-adv\src\main\AndroidManifest.xml:4:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from C:\Users\Administrator\Desktop\sgame\tencent-adv\src\main\AndroidManifest.xml:5:5-79
+	android:name
+		ADDED from C:\Users\Administrator\Desktop\sgame\tencent-adv\src\main\AndroidManifest.xml:5:22-76
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from C:\Users\Administrator\Desktop\sgame\tencent-adv\src\main\AndroidManifest.xml:6:5-76
+	android:name
+		ADDED from C:\Users\Administrator\Desktop\sgame\tencent-adv\src\main\AndroidManifest.xml:6:22-73
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from C:\Users\Administrator\Desktop\sgame\tencent-adv\src\main\AndroidManifest.xml:7:5-75
+	android:name
+		ADDED from C:\Users\Administrator\Desktop\sgame\tencent-adv\src\main\AndroidManifest.xml:7:22-72
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from C:\Users\Administrator\Desktop\sgame\tencent-adv\src\main\AndroidManifest.xml:8:5-81
+	android:name
+		ADDED from C:\Users\Administrator\Desktop\sgame\tencent-adv\src\main\AndroidManifest.xml:8:22-78
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from C:\Users\Administrator\Desktop\sgame\tencent-adv\src\main\AndroidManifest.xml:9:5-79
+	android:name
+		ADDED from C:\Users\Administrator\Desktop\sgame\tencent-adv\src\main\AndroidManifest.xml:9:22-76
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from C:\Users\Administrator\Desktop\sgame\tencent-adv\src\main\AndroidManifest.xml:10:5-81
+	android:name
+		ADDED from C:\Users\Administrator\Desktop\sgame\tencent-adv\src\main\AndroidManifest.xml:10:22-78
+uses-permission#android.permission.REQUEST_INSTALL_PACKAGES
+ADDED from C:\Users\Administrator\Desktop\sgame\tencent-adv\src\main\AndroidManifest.xml:11:5-83
+	android:name
+		ADDED from C:\Users\Administrator\Desktop\sgame\tencent-adv\src\main\AndroidManifest.xml:11:22-80
+application
+ADDED from C:\Users\Administrator\Desktop\sgame\tencent-adv\src\main\AndroidManifest.xml:14:5-44:19
+service#com.qq.e.comm.DownloadService
+ADDED from C:\Users\Administrator\Desktop\sgame\tencent-adv\src\main\AndroidManifest.xml:29:9-31:40
+	android:exported
+		ADDED from C:\Users\Administrator\Desktop\sgame\tencent-adv\src\main\AndroidManifest.xml:31:13-37
+	android:name
+		ADDED from C:\Users\Administrator\Desktop\sgame\tencent-adv\src\main\AndroidManifest.xml:30:13-57
+activity#com.qq.e.ads.ADActivity
+ADDED from C:\Users\Administrator\Desktop\sgame\tencent-adv\src\main\AndroidManifest.xml:32:9-34:86
+	android:configChanges
+		ADDED from C:\Users\Administrator\Desktop\sgame\tencent-adv\src\main\AndroidManifest.xml:34:13-83
+	android:name
+		ADDED from C:\Users\Administrator\Desktop\sgame\tencent-adv\src\main\AndroidManifest.xml:33:13-51
+activity#com.qq.e.ads.PortraitADActivity
+ADDED from C:\Users\Administrator\Desktop\sgame\tencent-adv\src\main\AndroidManifest.xml:35:9-38:86
+	android:screenOrientation
+		ADDED from C:\Users\Administrator\Desktop\sgame\tencent-adv\src\main\AndroidManifest.xml:37:13-49
+	android:configChanges
+		ADDED from C:\Users\Administrator\Desktop\sgame\tencent-adv\src\main\AndroidManifest.xml:38:13-83
+	android:name
+		ADDED from C:\Users\Administrator\Desktop\sgame\tencent-adv\src\main\AndroidManifest.xml:36:13-59
+activity#com.qq.e.ads.LandscapeADActivity
+ADDED from C:\Users\Administrator\Desktop\sgame\tencent-adv\src\main\AndroidManifest.xml:39:9-42:86
+	android:screenOrientation
+		ADDED from C:\Users\Administrator\Desktop\sgame\tencent-adv\src\main\AndroidManifest.xml:41:13-50
+	android:configChanges
+		ADDED from C:\Users\Administrator\Desktop\sgame\tencent-adv\src\main\AndroidManifest.xml:42:13-83
+	android:name
+		ADDED from C:\Users\Administrator\Desktop\sgame\tencent-adv\src\main\AndroidManifest.xml:40:13-60
+uses-sdk
+INJECTED from C:\Users\Administrator\Desktop\sgame\tencent-adv\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\Administrator\Desktop\sgame\tencent-adv\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Administrator\Desktop\sgame\tencent-adv\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Administrator\Desktop\sgame\tencent-adv\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Administrator\Desktop\sgame\tencent-adv\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from C:\Users\Administrator\Desktop\sgame\tencent-adv\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Administrator\Desktop\sgame\tencent-adv\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Administrator\Desktop\sgame\tencent-adv\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\Administrator\Desktop\sgame\tencent-adv\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Administrator\Desktop\sgame\tencent-adv\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Administrator\Desktop\sgame\tencent-adv\src\main\AndroidManifest.xml

@@ -1,4 +1,4 @@
-package com.yc.plugindemo;
+package com.wxr.plugindemo;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

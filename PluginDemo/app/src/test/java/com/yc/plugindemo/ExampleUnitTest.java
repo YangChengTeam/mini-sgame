@@ -1,4 +1,4 @@
-package com.yc.plugindemo;
+package com.wxr.plugindemo;
 
 import org.junit.Test;
 
