@@ -1,4 +1,4 @@
-package com.xxj.plugindemo;
+package com.xxj.adsdk;
 
 import org.junit.Test;
 

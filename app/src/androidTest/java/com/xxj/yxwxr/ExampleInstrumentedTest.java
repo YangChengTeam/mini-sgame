@@ -1,4 +1,4 @@
-package com.xxj.plugindemo;
+package com.xxj.yxwxr;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.yc.plugindemo", appContext.getPackageName());
+        assertEquals("com.wxr.gameh", appContext.getPackageName());
     }
 }

@@ -1,4 +1,4 @@
-package com.xxj.plugindemo;
+package com.xxj.adsdk;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.yc.plugindemo", appContext.getPackageName());
+        assertEquals("com.yc.adsdk.test", appContext.getPackageName());
     }
 }

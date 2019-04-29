@@ -8,11 +8,11 @@ android {
     compileSdkVersion 28
 
     defaultConfig {
-        applicationId "com.wxr.gameh"
+        applicationId "com.xxj.yxwxr"
         minSdkVersion 16
         targetSdkVersion 26
-        versionCode 5
-        versionName "1.1.4"
+        versionCode 6
+        versionName "1.1.5"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         resConfigs "zh"
         multiDexEnabled true
@@ -31,16 +31,16 @@ android {
 
     signingConfigs {
         release {
-            keyAlias 'sgame'
+            keyAlias 'yx'
             keyPassword '123456'
-            storeFile file('C:\\Users\\Administrator\\Desktop\\sgame\\sgame.jks')
+            storeFile file('C:\\Users\\Administrator\\Desktop\\sgame\\yx.jks')
             storePassword '123456'
         }
 
         debug {
-            keyAlias 'sgame'
+            keyAlias 'yx'
             keyPassword '123456'
-            storeFile file('C:\\Users\\Administrator\\Desktop\\sgame\\sgame.jks')
+            storeFile file('C:\\Users\\Administrator\\Desktop\\sgame\\yx.jks')
             storePassword '123456'
         }
     }

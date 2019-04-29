@@ -1,4 +1,4 @@
-package com.wxr.plugindemo;
+package com.xxj.plugindemo;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
