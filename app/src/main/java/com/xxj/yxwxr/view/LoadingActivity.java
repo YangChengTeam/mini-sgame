@@ -90,7 +90,7 @@ public class LoadingActivity extends BaseActivity {
             }
         });
 
-        if(android.os.Build.VERSION.SDK_INT > Build.VERSION_CODES.M){
+        if(android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
             if (checkAndRequestPermission()) {
                 showAd();
             }
