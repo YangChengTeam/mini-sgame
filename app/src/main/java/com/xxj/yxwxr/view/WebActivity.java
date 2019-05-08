@@ -288,19 +288,5 @@ public class WebActivity extends BaseActivity {
         };
     }
 
-    private Uri getUriFromFile(Context context, File file) {
-        Uri uri = null;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            uri = getUriFromFileForN(context, file);
-        } else {
-            uri = Uri.fromFile(file);
-        }
-        return uri;
-    }
-
-    private Uri getUriFromFileForN(Context context, File file) {
-        Uri fileUri = FileProvider.getUriForFile(context, context.getPackageName() + ".AgentWebFileProvider", file);
-        return fileUri;
-    }
 
 }

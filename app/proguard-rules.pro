@@ -54,7 +54,6 @@
 
 -keep class com.** {*;}
 
-
 -dontwarn   rx.**
 -keep class rx.** { *; }
 
@@ -89,4 +88,9 @@
 }
 
 
+-dontwarn  com.liulishuo.okdownload.**
+
+-keep class com.liulishuo.okdownload.** {
+    public *;
+}
 

@@ -90,10 +90,14 @@ public class LoadingActivity extends BaseActivity {
             }
         });
 
-
-        if (checkAndRequestPermission()) {
+        if(android.os.Build.VERSION.SDK_INT > Build.VERSION_CODES.M){
+            if (checkAndRequestPermission()) {
+                showAd();
+            }
+        } else {
             showAd();
         }
+
     }
 
 

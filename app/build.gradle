@@ -93,6 +93,10 @@ dependencies {
     implementation 'com.just.agentweb:agentweb:4.0.2'
     implementation 'com.just.agentweb:download:4.0.2'
 
+    implementation 'com.liulishuo.okdownload:okdownload:1.0.5'
+    implementation 'com.liulishuo.okdownload:okhttp:1.0.5'
+    implementation 'com.liulishuo.okdownload:sqlite:1.0.5'
+
 }
 
 

@@ -4,4 +4,8 @@
     <external-path
         name="gdt_sdk_download_path"
         path="GDTDOWNLOAD" />
+    <external-path
+        name="sgame_download_path"
+        path="com.xxj.yxwxr/download" />
+
 </paths>
