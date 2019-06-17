@@ -140,7 +140,7 @@ public class IndexFragment extends BaseFragment {
                         final ProductInfo item = productInfos.get(productInfos.size() - 1);
                         numTextView.setText(item.getPlay_num()+"人在玩");
                         RxView.clicks(topConstraintLayout).throttleFirst(200, TimeUnit.MILLISECONDS).subscribe(view-> {
-                            ((BaseActivity)getActivity()).nav2MiniProgram(item);
+                            ((BaseActivity)getActivity()).nav2(item);
                         });
                         logoImageView.setImageResource(R.drawable.start_btn_animation);
                         AnimationDrawable frameAnimation =    (AnimationDrawable)logoImageView.getDrawable();

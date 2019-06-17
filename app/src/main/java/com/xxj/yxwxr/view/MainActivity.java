@@ -15,6 +15,7 @@ import com.xxj.yxwxr.SGameApplication;
 import com.xxj.yxwxr.view.fragment.IndexFragment;
 import com.xxj.yxwxr.view.fragment.MyFragment;
 
+
 import java.util.List;
 import butterknife.*;
 

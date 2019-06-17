@@ -10,6 +10,7 @@ import android.provider.Settings;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.Toast;
 
 import com.kk.securityhttp.domain.ResultInfo;
@@ -46,7 +47,7 @@ public class LoadingActivity extends BaseActivity {
 
     private boolean isGo = true;
     private int initCount = 0;
-
+    private boolean isGoToMain = false;
 
     @Override
     protected int getLayoutId() {
@@ -56,6 +57,14 @@ public class LoadingActivity extends BaseActivity {
     @Override
     protected void initViews() {
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+        logo_image.invalidate();
+
+        VUiKit.postDelayed(10*1000, new Runnable() {
+            @Override
+            public void run() {
+                goToMain();
+            }
+        });
     }
 
     @Override
@@ -102,7 +111,7 @@ public class LoadingActivity extends BaseActivity {
 
 
     private void showAd() {
-        splashAD = new SplashAD(this, findViewById(R.id.active_image), "1108883294", "7000163086068345", new SplashADListener() {
+        splashAD = new SplashAD(this, findViewById(R.id.active_image), "1108883294", "8020364760483779", new SplashADListener() {
             @Override
             public void onADDismissed() {
                 switchMain(0);
@@ -149,11 +158,18 @@ public class LoadingActivity extends BaseActivity {
         VUiKit.postDelayed(delayTime, new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(LoadingActivity.this, MainActivity.class);
-                startActivity(intent);
-                finish();
+                goToMain();
             }
         });
+    }
+
+    private void goToMain(){
+        if(!isGoToMain) {
+            Intent intent = new Intent(LoadingActivity.this, MainActivity.class);
+            startActivity(intent);
+            isGoToMain = true;
+            finish();
+        }
     }
 
     //防止用户返回键退出 APP

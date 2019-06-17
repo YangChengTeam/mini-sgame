@@ -2,4 +2,8 @@
     <string name="app_name">小游戏</string>
     <string name="main_index_tab_text">首页</string>
     <string name="main_my_tab_text">我的</string>
+
+    <string name="google_appid">ca-app-pub-1901262708733387~3662027350</string>
+    <string name="google_ad_rewardedId">ca-app-pub-1901262708733387/5207181456</string>
+
 </resources>
