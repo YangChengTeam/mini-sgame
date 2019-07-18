@@ -14,6 +14,9 @@ import com.umeng.commonsdk.UMConfigure;
 import com.xxj.yxwxr.model.bean.ChannelInfo;
 import com.xxj.yxwxr.model.bean.InitInfo;
 import com.xxj.yxwxr.model.bean.ProductInfo;
+import com.yc.adsdk.core.Config;
+import com.yc.adsdk.tt.STtAdSDk;
+import com.yc.adsdk.tt.config.TTConfig;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -50,6 +53,7 @@ public class SGameApplication extends Application {
         new Thread(()->{
             inits();
         }).start();
+        initTtAd();
     }
 
 
@@ -58,6 +62,27 @@ public class SGameApplication extends Application {
     private void inits(){
         // 初始化http
         initHttpInfo();
+
+    }
+
+    private void initTtAd() {
+        STtAdSDk sTtAdSDk = STtAdSDk.getImpl();
+        Config config = new Config();
+        TTConfig ttConfig = new TTConfig();
+        ttConfig.setTtAdInsterDownload("901121417");
+        ttConfig.setTtAdInsterNormal("901121725");
+        ttConfig.setTtAdSplash("823543759");
+        ttConfig.setTtAdVideoHorizontal("901121375");
+        ttConfig.setTtAdVideoVertical("901121375");
+        ttConfig.setTtAdVideoNative("901121709");
+        ttConfig.setTtAdbanner("901121987");
+        ttConfig.setTtAdbannerDownload("901121895");
+        ttConfig.setTtAdbannerNative("901121423");
+        ttConfig.setTtAppName("外星人游戏圈_android");
+        config.setExt(ttConfig);
+        config.setAppId("5023543");
+
+        sTtAdSDk.init(this, config);
     }
 
     private void initHttpInfo(){

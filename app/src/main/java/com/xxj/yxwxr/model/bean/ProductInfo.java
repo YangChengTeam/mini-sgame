@@ -172,4 +172,28 @@ public class ProductInfo {
         this.xcx_id = xcx_id;
     }
 
+
+    @Override
+    public String toString() {
+        return "ProductInfo{" +
+                "id='" + id + '\'' +
+                ", game_app_id='" + game_app_id + '\'' +
+                ", game_jump_path='" + game_jump_path + '\'' +
+                ", wx_app_id='" + wx_app_id + '\'' +
+                ", wx_app_secrect='" + wx_app_secrect + '\'' +
+                ", origin_id='" + origin_id + '\'' +
+                ", jump_path='" + jump_path + '\'' +
+                ", game_id='" + game_id + '\'' +
+                ", xcx_id='" + xcx_id + '\'' +
+                ", name='" + name + '\'' +
+                ", image='" + image + '\'' +
+                ", ico='" + ico + '\'' +
+                ", desc='" + desc + '\'' +
+                ", play_num='" + play_num + '\'' +
+                ", type='" + type + '\'' +
+                ", path='" + path + '\'' +
+                ", wx_open_status='" + wx_open_status + '\'' +
+                ", release_status=" + release_status +
+                '}';
+    }
 }

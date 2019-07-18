@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.xxj.yxwxr">
 
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
@@ -75,10 +76,10 @@
         </provider>
 
         <!-- 声明 SDK 所需要的组件 -->
-        <service
+        <!--<service
             android:name="com.qq.e.comm.DownloadService"
             android:exported="false"/>
-        <!-- 请开发者注意字母的大小写，ADActivity，而不是 AdActivity -->
+        &lt;!&ndash; 请开发者注意字母的大小写，ADActivity，而不是 AdActivity &ndash;&gt;
         <activity
             android:name="com.qq.e.ads.ADActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"/>
@@ -89,7 +90,7 @@
         <activity
             android:name="com.qq.e.ads.LandscapeADActivity"
             android:screenOrientation="landscape"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenSize" />
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize" />-->
 
 
     </application>

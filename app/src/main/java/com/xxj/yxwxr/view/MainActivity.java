@@ -1,6 +1,13 @@
 package com.xxj.yxwxr.view;
 
 
+import android.Manifest;
+import android.annotation.TargetApi;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.os.Build;
+import android.provider.Settings;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.view.KeyEvent;
@@ -16,6 +23,7 @@ import com.xxj.yxwxr.view.fragment.IndexFragment;
 import com.xxj.yxwxr.view.fragment.MyFragment;
 
 
+import java.util.ArrayList;
 import java.util.List;
 import butterknife.*;
 
@@ -42,6 +50,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     @Override
     protected void initViews() {
+
+//        checkAndRequestPermission();
+
         mainActivity = this;
 
         Fragment indexFragment = IndexFragment.newInstance();
