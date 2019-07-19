@@ -59,6 +59,7 @@ public class LoadingActivity extends BaseActivity {
 
     @Override
     protected void initViews() {
+//        BannerLayoutManager
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         logo_image.invalidate();
 

@@ -4,6 +4,8 @@ import android.app.Application;
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.os.Build;
+import android.support.multidex.MultiDex;
+import android.util.Log;
 
 import com.alibaba.fastjson.JSON;
 import com.kk.securityhttp.domain.GoagalInfo;
@@ -37,9 +39,11 @@ public class SGameApplication extends Application {
     public InitInfo initInfo;
     public ProductInfo loadingInfo;
 
-    public static SGameApplication getSGameApplication(){
+    public static SGameApplication getSGameApplication() {
         return SGameApplication;
     }
+
+
 
     @Override
     public void onCreate() {
@@ -50,16 +54,15 @@ public class SGameApplication extends Application {
         hideShowDialog();
 
 
-        new Thread(()->{
-            inits();
-        }).start();
+//        new Thread(()->{
+//            inits();
+//        }).start();
+        inits();
         initTtAd();
     }
 
 
-
-
-    private void inits(){
+    private void inits() {
         // 初始化http
         initHttpInfo();
 
@@ -85,7 +88,7 @@ public class SGameApplication extends Application {
         sTtAdSDk.init(this, config);
     }
 
-    private void initHttpInfo(){
+    private void initHttpInfo() {
         ApplicationInfo appinfo = getApplicationInfo();
         String sourceDir = appinfo.sourceDir;
         ZipFile zf = null;
@@ -138,10 +141,10 @@ public class SGameApplication extends Application {
         String sv = Build.MODEL.contains(Build.BRAND) ? Build.MODEL + " " + Build.VERSION.RELEASE : Build.BRAND + " " + Build.MODEL + " " + Build.VERSION.RELEASE;
         params.put("sv", sv);
 
-        if(channelInfo != null){
-            params.put("site_id", channelInfo.getSite_id()+"");
-            params.put("soft_id", channelInfo.getSoft_id()+"");
-            params.put("referer_url", channelInfo.getNode_url()+"");
+        if (channelInfo != null) {
+            params.put("site_id", channelInfo.getSite_id() + "");
+            params.put("soft_id", channelInfo.getSoft_id() + "");
+            params.put("referer_url", channelInfo.getNode_url() + "");
         }
         if (GoagalInfo.get().packageInfo != null) {
             params.put("app_version", GoagalInfo.get().packageInfo.versionCode + "");
@@ -151,7 +154,7 @@ public class SGameApplication extends Application {
         HttpConfig.setDefaultParams(params);
 
         // 友盟统计
-        UMConfigure.init(this, "5c9aeda461f5649183000975", "WebStore" + agent_id, UMConfigure.DEVICE_TYPE_PHONE,null);
+        UMConfigure.init(this, "5c9aeda461f5649183000975", "WebStore" + agent_id, UMConfigure.DEVICE_TYPE_PHONE, null);
 
     }
 
@@ -168,9 +171,15 @@ public class SGameApplication extends Application {
             Method declaredMethod = cls.getDeclaredMethod("currentActivityThread");
             declaredMethod.setAccessible(true);
             Object activityThread = declaredMethod.invoke(null);
-            Field mHiddenApiWarningShown = cls.getDeclaredField("mHiddenApiWarningShown");
-            mHiddenApiWarningShown.setAccessible(true);
-            mHiddenApiWarningShown.setBoolean(activityThread, true);
+
+            try {
+                Field mHiddenApiWarningShown = cls.getDeclaredField("mHiddenApiWarningShown"); // java.lang.NoSuchFieldException: mHiddenApiWarningShown
+                mHiddenApiWarningShown.setAccessible(true);
+                mHiddenApiWarningShown.setBoolean(activityThread, true);
+            } catch (NoSuchFieldException e) {
+                LogUtil.msg("获取mHiddenApiWarningShown 失败", LogUtil.W);
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -179,6 +188,7 @@ public class SGameApplication extends Application {
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
+        MultiDex.install(this);
     }
 
 }
