@@ -1,12 +1,14 @@
 package com.xxj.yxwxr.view.fragment;
 
 import android.graphics.drawable.AnimationDrawable;
+import android.os.Build;
 import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -50,6 +52,7 @@ public class IndexFragment extends BaseFragment {
     @BindView(R.id.cl_top)
     ConstraintLayout topConstraintLayout;
 
+
     private List<ProductInfo> productInfos;
 
     private ProductAdapter productAdapter;
@@ -66,7 +69,13 @@ public class IndexFragment extends BaseFragment {
 
     @Override
     protected void initViews() {
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(mContext, 2){
+        if (Build.VERSION.SDK_INT <= 22) {
+            View viewStatusBar = mRootView.findViewById(R.id.v_status_bar);
+            viewStatusBar.setBackgroundColor(getResources().getColor(R.color.appdownloader_detail_download_gray));
+        }
+
+
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(mContext, 2) {
             @Override
             public boolean canScrollVertically() {
                 return false;
@@ -88,8 +97,8 @@ public class IndexFragment extends BaseFragment {
         productAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                 ProductInfo productInfo =  productAdapter.getData().get(position);
-                ((BaseActivity)getActivity()).nav2(productInfo);
+                ProductInfo productInfo = productAdapter.getData().get(position);
+                ((BaseActivity) getActivity()).nav2(productInfo);
             }
         });
 
@@ -102,7 +111,6 @@ public class IndexFragment extends BaseFragment {
         });
 
 
-
         showLoadingDialog("加载中...");
     }
 
@@ -113,12 +121,12 @@ public class IndexFragment extends BaseFragment {
         loadData();
     }
 
-    private void loadData(){
+    private void loadData() {
         getIndexData();
     }
 
-    private void getIndexData(){
-        Subscription subscription =  indexEngin.getIndexInfo().subscribe(new Subscriber<ResultInfo<List<ProductInfo>>>() {
+    private void getIndexData() {
+        Subscription subscription = indexEngin.getIndexInfo().subscribe(new Subscriber<ResultInfo<List<ProductInfo>>>() {
             @Override
             public void onCompleted() {
                 dissmissLoadingDialog();
@@ -133,17 +141,17 @@ public class IndexFragment extends BaseFragment {
 
             @Override
             public void onNext(final ResultInfo<List<ProductInfo>> resultInfo) {
-                if(resultInfo.getCode() == 1) {
+                if (resultInfo.getCode() == 1) {
                     productInfos = resultInfo.getData();
                     productAdapter.setNewData(resultInfo.getData());
-                    if(productInfos != null && productInfos.size() > 0){
+                    if (productInfos != null && productInfos.size() > 0) {
                         final ProductInfo item = productInfos.get(productInfos.size() - 1);
-                        numTextView.setText(item.getPlay_num()+"人在玩");
-                        RxView.clicks(topConstraintLayout).throttleFirst(200, TimeUnit.MILLISECONDS).subscribe(view-> {
-                            ((BaseActivity)getActivity()).nav2(item);
+                        numTextView.setText(item.getPlay_num() + "人在玩");
+                        RxView.clicks(topConstraintLayout).throttleFirst(200, TimeUnit.MILLISECONDS).subscribe(view -> {
+                            ((BaseActivity) getActivity()).nav2(item);
                         });
                         logoImageView.setImageResource(R.drawable.start_btn_animation);
-                        AnimationDrawable frameAnimation =    (AnimationDrawable)logoImageView.getDrawable();
+                        AnimationDrawable frameAnimation = (AnimationDrawable) logoImageView.getDrawable();
                         frameAnimation.setCallback(logoImageView);
                         frameAnimation.setVisible(true, true);
                         frameAnimation.start();

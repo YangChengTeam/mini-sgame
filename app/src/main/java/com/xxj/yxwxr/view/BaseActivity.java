@@ -18,6 +18,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.kk.securityhttp.domain.GoagalInfo;
@@ -56,7 +57,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         if ((getIntent().getFlags() & Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT) != 0) {
             // Activity was brought to front and not created,
             // Thus finishing this will get us to the last viewed activity
@@ -64,11 +64,21 @@ public abstract class BaseActivity extends AppCompatActivity {
             return;
         }
 
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().hide();
+        if (isFullScreen()) {
+            //无title
+            requestWindowFeature(Window.FEATURE_NO_TITLE);
+            //全屏
+            getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                    WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        } else {
+            if (getSupportActionBar() != null) {
+                getSupportActionBar().hide();
+            }
         }
-
         setContentView(getLayoutId());
+
+
+
         ButterKnife.bind(this);
         if (findViewById(R.id.v_status_bar) != null) {
             setstatusBarHeight(findViewById(R.id.v_status_bar));
@@ -78,6 +88,10 @@ public abstract class BaseActivity extends AppCompatActivity {
         initViews();
         initData();
 
+    }
+
+    protected boolean isFullScreen() {
+        return false;
     }
 
     @Override
@@ -143,8 +157,12 @@ public abstract class BaseActivity extends AppCompatActivity {
             if (productInfo.getType().equals("2")) {
                 nav2H5(productInfo);
             } else if (productInfo.getType().equals("3")) {
-                this.downloadProductInfo = productInfo;
-                if (checkAndRequestPermission()) {
+                if (Build.VERSION.SDK_INT >= 23) {
+                    this.downloadProductInfo = productInfo;
+                    if (checkAndRequestPermission()) {
+                        download(productInfo);
+                    }
+                } else {
                     download(productInfo);
                 }
             } else {

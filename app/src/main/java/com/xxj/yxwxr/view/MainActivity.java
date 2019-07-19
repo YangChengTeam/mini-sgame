@@ -1,13 +1,5 @@
 package com.xxj.yxwxr.view;
 
-
-import android.Manifest;
-import android.annotation.TargetApi;
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.net.Uri;
-import android.os.Build;
-import android.provider.Settings;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.view.KeyEvent;
@@ -22,9 +14,8 @@ import com.xxj.yxwxr.SGameApplication;
 import com.xxj.yxwxr.view.fragment.IndexFragment;
 import com.xxj.yxwxr.view.fragment.MyFragment;
 
-
-import java.util.ArrayList;
 import java.util.List;
+
 import butterknife.*;
 
 
@@ -39,7 +30,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     private static MainActivity mainActivity;
 
-    public static MainActivity getMainActivity(){
+    public static MainActivity getMainActivity() {
         return mainActivity;
     }
 
@@ -84,6 +75,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     private boolean isClick;
     private boolean isClick2;
+
     public void showFragment(int index) {
         FragmentTransaction trx = getSupportFragmentManager().beginTransaction();
         if (index == 0) {
@@ -101,13 +93,12 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             isClick2 = true;
             trx.show(this.fragments[1]).commit();
         }
-        if(index == 0){
+        if (index == 0) {
             this.tab_textViews.get(index).setTextColor(getResources().getColor(R.color.tab_color_selected));
             this.tab_imageViews.get(index).setImageResource(R.mipmap.index_tab_selected);
             this.tab_textViews.get(1).setTextColor(getResources().getColor(R.color.tab_color));
             this.tab_imageViews.get(1).setImageResource(R.mipmap.my_tab);
-        }
-        else if(index == 1){
+        } else if (index == 1) {
             this.tab_textViews.get(index).setTextColor(getResources().getColor(R.color.tab_color_selected));
             this.tab_imageViews.get(index).setImageResource(R.mipmap.my_tab_selected);
             this.tab_textViews.get(0).setTextColor(getResources().getColor(R.color.tab_color));
@@ -118,12 +109,13 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     @Override
     protected void initData() {
         super.initData();
-        if(SGameApplication.getSGameApplication().loadingInfo != null){
+        if (SGameApplication.getSGameApplication().loadingInfo != null) {
             nav2MiniProgram(SGameApplication.getSGameApplication().loadingInfo);
         }
     }
 
     private long firstTime = 0;
+
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode != 4) {
             return false;

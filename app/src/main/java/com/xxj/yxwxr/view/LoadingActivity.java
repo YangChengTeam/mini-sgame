@@ -1,21 +1,13 @@
 package com.xxj.yxwxr.view;
 
-import android.Manifest;
-import android.annotation.TargetApi;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.net.Uri;
-import android.os.Build;
-import android.provider.Settings;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.ScrollView;
-import android.widget.Toast;
 
 import com.kk.securityhttp.domain.ResultInfo;
-import com.kk.utils.LogUtil;
 import com.kk.utils.ToastUtil;
 import com.kk.utils.VUiKit;
 import com.xxj.yxwxr.R;
@@ -28,8 +20,6 @@ import com.yc.adsdk.core.AdType;
 import com.yc.adsdk.core.Error;
 import com.yc.adsdk.core.SAdSDK;
 
-import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.BindView;
 import rx.Subscriber;
@@ -41,6 +31,9 @@ public class LoadingActivity extends BaseActivity {
     @BindView(R.id.logo_image)
     ImageView logo_image;
 
+    @BindView(R.id.active_image)
+    FrameLayout active_image;
+
 
     private int count = 5;
     private InitInfo initInfo;
@@ -50,6 +43,14 @@ public class LoadingActivity extends BaseActivity {
     private boolean isGo = true;
     private int initCount = 0;
     private boolean isGoToMain = false;
+
+    //是否强制跳转到主页面
+    private boolean mForceGoMain;
+
+    @Override
+    protected boolean isFullScreen() {
+        return true;
+    }
 
     @Override
     protected int getLayoutId() {
@@ -61,12 +62,12 @@ public class LoadingActivity extends BaseActivity {
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         logo_image.invalidate();
 
-        VUiKit.postDelayed(10 * 1000, new Runnable() {
+        /*VUiKit.postDelayed(10 * 1000, new Runnable() {  //影响广告的展示，部分广告直接在闪屏页用h5展示
             @Override
             public void run() {
                 goToMain();
             }
-        });
+        });*/
     }
 
     @Override
@@ -112,7 +113,6 @@ public class LoadingActivity extends BaseActivity {
             public void onDismissed() {
 
                 Log.d("securityhttp", "SAdSDK onDismissed: ");
-
                 goToMain();
             }
 
@@ -130,9 +130,10 @@ public class LoadingActivity extends BaseActivity {
             @Override
             public void onClick() {
                 Log.d("securityhttp", "SAdSDK onClick: ");
+                mForceGoMain = true;
 //                goToMain();
             }
-        });
+        }, active_image);
 
     }
 
@@ -154,6 +155,16 @@ public class LoadingActivity extends BaseActivity {
             finish();
         }
     }
+
+    @Override
+    protected void onResume() {
+        if (mForceGoMain) {
+            goToMain();
+        }
+        super.onResume();
+    }
+
+
 
     //防止用户返回键退出 APP
     @Override

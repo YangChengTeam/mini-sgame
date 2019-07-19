@@ -41,6 +41,13 @@
         <item name="android:activityCloseEnterAnimation">@anim/open_activity_left_in</item>
         <item name="android:activityCloseExitAnimation">@anim/open_activity_right_out</item>
     </style>
+    <style name="Theme.Splash" parent="Theme.Light">
+        <item name="windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowNoTitle">true</item>
+    </style>
 
+    <style name="Theme.Light" parent="Theme.AppCompat.Light">
+    </style>
 
 </resources>
