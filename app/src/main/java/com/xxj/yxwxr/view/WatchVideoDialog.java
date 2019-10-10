@@ -47,6 +47,7 @@ public class WatchVideoDialog extends AlertDialog implements View.OnClickListene
                 break;
             case R.id.watch_video_dialog_btn_affirm:
                 onClickBtnListener.clickBtn(true);
+                dismiss();
                 break;
         }
     }

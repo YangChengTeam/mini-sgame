@@ -102,8 +102,7 @@ public class LoadingActivity extends BasePermissionActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        Log.d("555555555", "setTitleName: appName " + appName);
-        loading_tv_title.setText(appName + "辅助外挂使用说明");
+        loading_tv_title.setText(appName + "使用说明");
     }
 
     @Override
@@ -141,6 +140,7 @@ public class LoadingActivity extends BasePermissionActivity {
     }
 
     private Handler mHandler = new Handler();
+    private boolean mIsWatchVideoDialogDialog;
 
     @Override
     protected void onRequestPermissionSuccess() {
@@ -159,20 +159,26 @@ public class LoadingActivity extends BasePermissionActivity {
                 }
 
                 if (!isNewUser) {
+                    mIsWatchVideoDialogDialog = true;
                     ShowNewUserAd();
                 } else {
-                    showAd();
+                    if (mIsWatchVideoDialogDialog) {
+                        showWatchVideoDialog();
+                    } else {
+                        showAd();
+                    }
                 }
             }
         });
     }
+
     private boolean mIsShowing;
 
     private void showWatchVideoDialog() {
-        if(mIsShowing){
+        if (mIsShowing) {
             return;
         }
-        mIsShowing=true;
+        mIsShowing = true;
         WatchVideoDialog watchVideoDialog = new WatchVideoDialog(LoadingActivity.this);
         watchVideoDialog.setCancelable(false);
         watchVideoDialog.show();
@@ -192,7 +198,7 @@ public class LoadingActivity extends BasePermissionActivity {
             @Override
             public void onDismissed() {
                 Log.d("securityhttp", "ShowNewUserAd onDismissed: ");
-                showWatchVideoDialog();
+
             }
 
             @Override
@@ -247,7 +253,6 @@ public class LoadingActivity extends BasePermissionActivity {
 //                goToMain();
             }
         }, active_image);
-
     }
 
 

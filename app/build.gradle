@@ -46,7 +46,6 @@ android {
     }
 
 
-
     compileOptions {
 //        incremental = false
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -114,5 +113,3 @@ dependencies {
 
     api 'com.android.support:multidex:1.0.1'
 }
-
-
