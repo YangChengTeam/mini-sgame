@@ -3,12 +3,56 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
 
+    <ImageView
+        android:id="@+id/loading_iv_icon"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="75dp"
+        android:src="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/loading_tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/loading_iv_icon"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:text="小游戏"
+        android:textColor="@color/black"
+        android:textSize="26sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/loading_tv_title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="2dp"
+        android:padding="22dp"
+        android:text="本软件仅限于交流学习，请勿用于非法用途！\n首次使用需要完整观看完【视频】才可解锁使用，谢谢您的配合！"
+        android:textColor="@color/gray"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/loading_tv_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="75dp"
+        android:background="@mipmap/loading_btn_gray"
+        android:gravity="center"
+        android:text="开始使用"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
     <FrameLayout
         android:id="@+id/active_image"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_above="@id/logo_image"
-        android:scaleType="centerCrop" />
+        android:scaleType="centerCrop"
+        android:visibility="gone" />
 
 
     <de.hdodenhof.circleimageview.CircleImageView
@@ -17,8 +61,9 @@
         android:layout_height="60dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp"
         android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
         android:background="@color/white"
-        android:src="@mipmap/ic_launcher" />
+        android:src="@mipmap/ic_launcher"
+        android:visibility="gone" />
 </RelativeLayout>

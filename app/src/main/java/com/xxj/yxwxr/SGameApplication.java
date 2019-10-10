@@ -74,7 +74,6 @@ public class SGameApplication extends Application {
         TTConfig ttConfig = new TTConfig();
         ttConfig.setTtAdInsterDownload("901121417");
         ttConfig.setTtAdInsterNormal("901121725");
-        ttConfig.setTtAdSplash("823543759");
         ttConfig.setTtAdVideoHorizontal("901121375");
         ttConfig.setTtAdVideoVertical("901121375");
         ttConfig.setTtAdVideoNative("901121709");
@@ -82,6 +81,9 @@ public class SGameApplication extends Application {
         ttConfig.setTtAdbannerDownload("901121895");
         ttConfig.setTtAdbannerNative("901121423");
         ttConfig.setTtAppName("外星人游戏圈_android");
+        ttConfig.setTtAdSplash("823543759");
+        ttConfig.setTtAdVideoRewardHorizontal("923543786");
+        ttConfig.setTtAdVideoReward("923543786");
         config.setExt(ttConfig);
         config.setAppId("5023543");
 
