@@ -47,7 +47,7 @@ public class SplashActivity extends BaseActivity {
             public void run() {
                 showAd();
             }
-        }, 300);
+        }, 700);
     }
 
     @Override
